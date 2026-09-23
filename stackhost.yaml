@@ -1,0 +1,11 @@
+runtime: python
+install: apt-get update && apt-get install -y python3 python3-pip python-is-python3
+build: pip install --break-system-packages -r requirements.txt
+start: python main.py
+port: 8000
+env:
+  ADMIN_PASSWORD: "رمز-قوی-خودت"
+  SECRET_KEY: "یک-رشته-تصادفی-بلند"
+  DATA_DIR: /data
+volumes:
+  - /data
